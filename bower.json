@@ -1,5 +1,5 @@
 {
-  "name": "AngularJS",
+  "name": "meucarreto_front",
   "version": "0.0.1",
   "description": "",
   "homepage": "",
@@ -19,11 +19,10 @@
     "tests"
   ],
   "dependencies": {
-    "angular": "^1.4.7",
+    "angular": "^1.5.8",
     "angular-bootstrap": "^0.14.2",
     "angular-ui-router": "^0.2.14",
     "bootstrap": "^3.3.5",
-    "angular-cookies": "~1.4.8",
     "angular-resource": "~1.5.8"
   }
 }
