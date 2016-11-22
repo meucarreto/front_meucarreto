@@ -1,0 +1,7 @@
+#!/bin/bash
+cd /home/ec2-user/meucarreto_front
+npm install --silent
+bower install
+chown -R ec2-user:ec2-user /home/ec2-user/meucarreto_front/
+gulp
+exit 0

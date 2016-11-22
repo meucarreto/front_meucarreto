@@ -17,7 +17,7 @@ angular.module('App').config(['$stateProvider', '$urlRouterProvider',
                 controller: 'mainController'
             })
             .state('contact', {
-                url: '/contact',
+                url: '/contato',
                 templateUrl: 'app/views/contact/contact.html',
                 controller: 'contactController'
             });
