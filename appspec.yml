@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/meucarreto_front
+    destination: /var/www/html/meucarreto_front
 hooks:
   BeforeInstall:
     - location: scripts/prepare.sh
