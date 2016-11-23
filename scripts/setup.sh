@@ -1,8 +1,8 @@
 #!/bin/bash
 cd /home/ec2-user/meucarreto_front
 npm install --silent
-
-chown -R ec2-user:ec2-user /home/ec2-user/meucarreto_front/
-
-node /home/ec2-user/meucarreto_front/server/server.js
+bower install
+chown -R ec2-user:apache /home/ec2-user/meucarreto_front/
+gulp build
+forever start -o /home/ec2-user/meucarreto_api/logs/out.log -e /home/ec2-user/meucarreto_api/logs/err.log node server/app.js
 exit 0

@@ -1,3 +1,3 @@
 #!/bin/bash
-# forever stopall
+forever stopall
 exit 0
