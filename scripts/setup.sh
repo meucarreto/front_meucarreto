@@ -4,5 +4,5 @@ npm install --silent
 bower install --allow-root
 gulp build_all
 chown -R ec2-user:apache /var/www/html/meucarreto_front/
-forever start -o /var/www/html/dash_front/logs/out.log -e /var/www/html/meucarreto_front/logs/err.log server/app.js
+forever start -o /var/www/html/meucarreto_front/logs/out.log -e /var/www/html/meucarreto_front/logs/err.log server/app.js
 exit 0
