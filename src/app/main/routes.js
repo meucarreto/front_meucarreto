@@ -13,6 +13,11 @@ angular.module('App').config(['$stateProvider', '$urlRouterProvider',
         $stateProvider
             .state('index', {
                 url: '/',
+                templateUrl: 'app/views/embreve/embreve.html',
+                controller: 'embreveController'
+            })
+            .state('home', {
+                url: '/home',
                 templateUrl: 'app/views/main/main.html',
                 controller: 'mainController'
             })

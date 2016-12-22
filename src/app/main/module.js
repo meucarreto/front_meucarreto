@@ -1,4 +1,4 @@
-var app = angular.module('App', ['ui.bootstrap', 'ui.router', 'ngResource']);
+var app = angular.module('App', ['ui.bootstrap', 'ui.router', 'ngResource', 'angular-loading-bar', 'environment', 'ngCookies']);
 
 app
 .config(['$resourceProvider', function($resourceProvider) {
@@ -16,6 +16,75 @@ app
 	}); // if route not found redirect to /
 }])
 
+.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+    cfpLoadingBarProvider.latencyThreshold = 10;
+    cfpLoadingBarProvider.parentSelector = '#loading-bar-container';
+    cfpLoadingBarProvider.spinnerTemplate = '<div><span class="fa fa-spinner">Carregando seu conteúdo...</div>';
+    cfpLoadingBarProvider.includeSpinner = false;
+    cfpLoadingBarProvider.includeBar = true;
+  }])
+
+.config(function(envServiceProvider) {
+	// set the domains and variables for each environment - if you are using GET to retrieve informations
+	envServiceProvider.config({
+		domains: {
+			development: ['localhost'],
+			production: ['http://54.237.238.232']
+		},
+		vars: {
+			development: {
+				apiUrl: 'http://0.0.0.0:3000/api',
+			},			
+			production: {
+				apiUrl: 'http://54.237.238.232:8080/api',
+			}
+		}
+	});
+	envServiceProvider.check();
+})
+
+.config(['$httpProvider', 'envServiceProvider', function($httpProvider, envServiceProvider){
+	'use strict';
+
+	// Code bellow sets all behaviors on all calls, for headers and calls errors tretaments
+	$httpProvider.interceptors.push(function($q, $cookies, $location, $rootScope) {
+		return {
+			'request': function(config) {
+				// Configurates header "token" to user in all calls, token is stored in user cookie (check app/login/login.js)
+				config.headers['token'] = $cookies.get('accessToken');
+				config.headers['Accept'] = 'application/json';
+				config.headers['Content-Type'] = 'application/json';
+				return config;
+			},
+			'response': function(response) {
+				// console.log(response.statusText);
+				// console.log(response.status);
+				// $rootScope.response = response;
+				// If response is anything differente than OK, removes token, and sends user to login again
+				// if (response.status > 400) {$location.path('/login')};
+
+				return response;
+			},
+			'requestError': function(rejection) {
+				// SE ALGUMA CHAMADA REJEITADA, ENVIA PARA LOGIN E REMOVE COOKIE
+		     	$location.path('login');
+		     	// $cookies.remove('accessToken');
+		     	alert('requestError');
+
+		      return $q.reject(rejection);
+		    },
+		    'responseError': function(rejection) {
+		    	// SE ALGUMA CHAMADA REJEITADA, ENVIA PARA LOGIN E REMOVE COOKIE
+		     // $location.path('login');
+		     	// $cookies.remove('accessToken');
+		     	alert('responseError');
+
+		      return $q.reject(rejection);
+		    },
+		};
+	});
+
+}])
 // after the configuration and when app runs the first time we o some more stuff
 .run(['$rootScope', '$state', function ($rootScope, $state) {
 	

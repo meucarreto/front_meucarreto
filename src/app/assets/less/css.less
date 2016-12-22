@@ -23,6 +23,9 @@ body {
 .mt100{
   margin-top: 100px;
 }
+.w100{
+  width: 100%;
+}
 
 /*  ###### FIM DEFINIÇÃO GERAL ###### */
 
@@ -215,6 +218,17 @@ header  .navbar-default .navbar-nav > li > a:focus {
   margin-top: 0;
 }
 
+.text-default {
+  text-align: center;
+  font-size: 20px;
+  color: #434343;
+}
+
+
+.justify{
+      text-align: justify;
+}
+
 /* ###### FIM MAIN ######*/
 
 
@@ -382,12 +396,6 @@ header  .navbar-default .navbar-nav > li > a:focus {
   border-bottom-width: 1px;
   border-bottom-color: #E4DCDC;
   margin-bottom: 25px;  
-}
-
-.text-default {
-  text-align: center;
-  font-size: 20px;
-  color: #434343;
 }
 
 .main {
@@ -639,5 +647,79 @@ h3 {
 .error-carreto {
   margin: 5px 0px;
   padding: 5px;
+}
+
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+/*
+html {
+  position: relative;
+  height: 100%;
+}*/
+.body-em-breve {
+  background: url(../images/bg.jpg)  no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+} 
+.center-em-breve {
+  width: 100%;
+  max-width: 500px;
+  position:absolute;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  padding: 15px;
+  -ms-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  z-index: 99999;
+}
+h1 {
+  width: 100%;
+  margin: 0;
+  color: #fff;
+  font-size: 35px;
+  text-align: center; 
+  text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+}
+h1::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #4aa1d9;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+p {
+  width: 100%;
+  margin: 15px 0 0 0;
+  color: #fff;
+  font-size: 13px;
+  text-align: center; 
+    font-family: 'Montserrat', sans-serif;
+}
+#gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  z-index: 10;
+}
+#gradient2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  z-index: 3;
 }
 
