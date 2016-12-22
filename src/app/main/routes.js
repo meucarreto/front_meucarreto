@@ -25,6 +25,11 @@ angular.module('App').config(['$stateProvider', '$urlRouterProvider',
                 url: '/contato',
                 templateUrl: 'app/views/contact/contact.html',
                 controller: 'contactController'
+            })
+            .state('list', {
+                url: '/listagem/:slug',
+                templateUrl: 'app/views/categoryList/contact.html',
+                controller: 'contactController'
             });
     }
 ]);
