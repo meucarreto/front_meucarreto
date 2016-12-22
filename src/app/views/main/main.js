@@ -6,4 +6,6 @@ app.controller('mainController', ['$scope', function($scope){
 		{link: 'pesado', descricao: 'Pesado'}
 	];
 
+	$scope.seo.title = "Meu Carreto"
+
 }])
