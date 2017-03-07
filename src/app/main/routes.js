@@ -30,6 +30,16 @@ angular.module('App').config(['$stateProvider', '$urlRouterProvider',
                 url: '/listagem/:slug',
                 templateUrl: 'app/views/categoryList/contact.html',
                 controller: 'contactController'
+            })
+            .state('companiesList', {
+                url: '/companies',
+                templateUrl: 'app/views/companies/list.html',
+                controller: 'companiesListController'
+            })
+            .state('companiesDetail', {
+                url: '/companies/:slug',
+                templateUrl: 'app/views/companies/detail.html',
+                controller: 'companiesDetailController'
             });
     }
 ]);

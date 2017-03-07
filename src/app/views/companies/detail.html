@@ -1,0 +1,45 @@
+<header ng-include src="'app/views/header/header.html'"></header>
+<div class="contact container">
+	<div class="main">
+		<div class="text-divider center ">
+		 	<h2>NAME COMPANIE</h2>
+		</div>
+		<div class="info">
+			<div class="row">
+				<div class="col-sm-12" >
+					<div class="box-carreto">
+						<div class="row">
+							<div class="col-sm-3">
+								<img src="{{item.thumb == null ? 'images/trunk.png' : item.thumb}}" class="icon-companie-big">
+							</div>
+							<div class="col-sm-9 name-companie">
+								<div class="row">
+									<div class="col-sm-12">
+										NOME DO CONTATO
+									</div>
+									<div class="col-sm-12 contacts-companies mt25">
+										Cadastrado desde de : dd/mm/yyyy
+									</div>
+									<div class="col-sm-12 contacts-companies t5">
+										<span class="glyphicon glyphicon-envelope" aria-hidden="true" ></span> 
+										<span>email@email.com</span>
+									</div>
+									<div class="col-sm-12 contacts-companies t5">
+										<span class="glyphicon glyphicon-signal" aria-hidden="true" ></span> 
+										<span>(11) 91234-5678</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<a ui-sref="companiesList()" class="btn btn-block btn-ver-mais">VOLTAR PARA A LISTA</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<footer ng-include src="'app/views/footer/footer.html'"></footer>

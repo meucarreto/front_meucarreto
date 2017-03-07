@@ -33,10 +33,10 @@ app
 		},
 		vars: {
 			development: {
-				apiUrl: 'http://0.0.0.0:3000/api',
+				apiUrl: 'http://api.meucarreto.com.br/api',
 			},			
 			production: {
-				apiUrl: 'http://54.237.238.232:8080/api',
+				apiUrl: 'http://api.meucarreto.com.br/api',
 			}
 		}
 	});
