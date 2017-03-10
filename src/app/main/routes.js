@@ -32,12 +32,12 @@ angular.module('App').config(['$stateProvider', '$urlRouterProvider',
                 controller: 'contactController'
             })
             .state('companiesList', {
-                url: '/companies',
+                url: '/transportadora',
                 templateUrl: 'app/views/companies/list.html',
                 controller: 'companiesListController'
             })
             .state('companiesDetail', {
-                url: '/companies/:slug',
+                url: '/transportadora/:slug',
                 templateUrl: 'app/views/companies/detail.html',
                 controller: 'companiesDetailController'
             });

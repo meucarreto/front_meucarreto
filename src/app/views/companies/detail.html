@@ -2,7 +2,7 @@
 <div class="contact container">
 	<div class="main">
 		<div class="text-divider center ">
-		 	<h2>NAME COMPANIE</h2>
+		 	<h2>{{company.name}}</h2>
 		</div>
 		<div class="info">
 			<div class="row">
@@ -15,18 +15,21 @@
 							<div class="col-sm-9 name-companie">
 								<div class="row">
 									<div class="col-sm-12">
-										NOME DO CONTATO
+										{{company.slug | capitalize}}
 									</div>
 									<div class="col-sm-12 contacts-companies mt25">
-										Cadastrado desde de : dd/mm/yyyy
+										Cadastrado desde de : {{company.created_at | date : 'dd/MM/yyyy'}}
 									</div>
+								</div>
+								<div class="row t5" ng-repeat="contact in contacts">
 									<div class="col-sm-12 contacts-companies t5">
 										<span class="glyphicon glyphicon-envelope" aria-hidden="true" ></span> 
-										<span>email@email.com</span>
+										<span>{{contact.email}}</span>
 									</div>
 									<div class="col-sm-12 contacts-companies t5">
 										<span class="glyphicon glyphicon-signal" aria-hidden="true" ></span> 
-										<span>(11) 91234-5678</span>
+										<span>{{contact.fix_phone}}</span> <span ng-hide="contact.cel_phone == null"> / </span>
+										<span>{{contact.cel_phone}}</span>
 									</div>
 								</div>
 							</div>

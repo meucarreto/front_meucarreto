@@ -32,14 +32,27 @@ app.controller('mainController', ['$scope', '$location', 'ListCompaniesHome', fu
 
 	$scope.ga = function(i){
 
-		alert("GA - " + i);
+		// ga('send', {
+		//   hitType: 'event',
+		//   eventCategory: 'Home',
+		//   eventAction: 'Ver detalhes de transportadora',
+		//   eventLabel: 'Ver detalhes da transportadoras' + i
+		// });
+		ga('Home', 'Ver detalhes de transportadora', 'Ver detalhes da transportadoras' + i, i)
 	}
 
 	$scope.seeMore = function(){
 
-		$scope.ga("SEE MORE");
+		// ga('send', {
+		//   hitType: 'event',
+		//   eventCategory: 'Home',
+		//   eventAction: 'Ver mais',
+		//   eventLabel: 'Ver mais transportadoras'
+		// });
 
-		$location.url('companies');
+		ga('Home', 'Ver mais', 'Ver mais transportadoras' )
+
+		$location.url('transportadora');
 	}
 
 
