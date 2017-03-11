@@ -53,8 +53,12 @@ app.controller('companiesListController', ['$scope', 'ListAllCompanies', 'ListCo
 	});
 
 	$scope.ga = function(i){
-		
-		ga('Home', 'Ver detalhes de transportadora', 'Ver detalhes da transportadoras' + i, i)
+		ga('send', {
+		  hitType: 'event',
+		  eventCategory: 'Lista de transportadoras',
+		  eventAction: 'Ver detalhes de transportadora',
+		  eventLabel: 'Ver detalhes da transportadoras' + i
+		});
 	}
 
 
@@ -97,8 +101,14 @@ app.controller('companiesDetailController', ['$scope', 'ListAllCompanies', '$sta
 
 
 	$scope.ga = function(i){
+		ga('send', {
+		  hitType: 'event',
+		  eventCategory: 'Detalhe da transportadora',
+		  eventAction: 'Ver mais de transportadora',
+		  eventLabel: 'Ver mais transportadoras'
+		});
 
-		ga('Detalhe da transportadora', 'Ver mais', 'Ver mais transportadoras' )
+		// ga('Detalhe da transportadora', 'Ver mais', 'Ver mais transportadoras' )
 	}
 
 

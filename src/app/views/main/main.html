@@ -1,6 +1,6 @@
 <header ng-include src="'app/views/header/header.html'"></header>
-<div class="row">
-	<div class="col-sm-12">
+	<div class="row">
+		<div class="col-sm-12">
 			<div class="container-fluid search-bar">
 				<!-- <div class="row">
 					<div class="col-sm-12 submenu center">
@@ -15,29 +15,38 @@
 
 			</div>
 		</div>
+	</div>
+	<div class="row">
 		<div class="col-sm-12">
 			<div class="container container-carreto">
 				<div class="row">
 					<div class="col-sm-4" ng-repeat="item in items" >
 						<div class="box-carreto">
 							<div class="row">
-								<div class="col-sm-2">
+								<div class="col-sm-2 col-xs-3">
 									<img src="{{item.thumb == null ? 'images/trunk.png' : item.thumb}}" class="icon-companie">
 								</div>
-								<div class="col-sm-10 name-companie">
+								<div class="col-sm-10 col-xs-9 name-companie">
 									<div class="row">
 										<div class="col-sm-12">
 											<a ui-sref="companiesDetail({slug : item.slug})" ng-click="ga('VER DETALHES DO ' + item.name)"> {{item.name}}</a>
 										</div>
-										<div class="col-sm-12 contacts-companies t5">
+										<div class="col-sm-12 contacts-companies t5" ng-hide="item.contact.email == null">
 											<span class="glyphicon glyphicon-envelope" aria-hidden="true" ></span> 
-											<span>{{item.slug | limitTo:item.size}}</span>
+											<span>{{item.contact.email | limitTo:item.size}}</span>
 										</div>
-										<div class="col-sm-12 contacts-companies">
+										<div class="col-sm-12 contacts-companies" >
+											<span class="glyphicon glyphicon-signal" aria-hidden="true" ng-hide="item.contact.fix_phone == null"></span> 
+											<span ng-hide="item.contact.fix_phone == null">{{item.contact.fix_phone | limitTo:item.size}}</span>
+											<span ng-hide="item.contact.fix_phone == null && item.contact.email == null">
+											<button class="btn btn-ver-dados" ng-hide="item.size == 100" ng-click="item.size = 100; ga('VER DADOS DO ' + item.name)">VER DADOS</button>
+											</span> 
+										</div>
+										<!-- <div class="col-sm-12 contacts-companies">
 											<span class="glyphicon glyphicon-signal" aria-hidden="true" ></span> 
 											<span>{{item.slug | limitTo:item.size}}</span>
 											<button class="btn btn-ver-dados" ng-hide="item.size == 100" ng-click="item.size = 100; ga('VER DADOS DO ' + item.name)">VER DADOS</button> 
-										</div>
+										</div> -->
 									</div>
 								</div>
 							</div>

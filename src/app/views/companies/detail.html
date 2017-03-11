@@ -9,12 +9,12 @@
 				<div class="col-sm-12" >
 					<div class="box-carreto">
 						<div class="row">
-							<div class="col-sm-3">
+							<div class="col-sm-4 col-md-3">
 								<img src="{{item.thumb == null ? 'images/trunk.png' : item.thumb}}" class="icon-companie-big">
 							</div>
-							<div class="col-sm-9 name-companie">
+							<div class="col-sm-8 col-md-9 name-companie">
 								<div class="row">
-									<div class="col-sm-12">
+									<div class="col-sm-12 t5">
 										{{company.slug | capitalize}}
 									</div>
 									<div class="col-sm-12 contacts-companies mt25">
@@ -22,12 +22,12 @@
 									</div>
 								</div>
 								<div class="row t5" ng-repeat="contact in contacts">
-									<div class="col-sm-12 contacts-companies t5">
+									<div class="col-sm-12 contacts-companies t5" ng-hide="contact.email == null">
 										<span class="glyphicon glyphicon-envelope" aria-hidden="true" ></span> 
 										<span>{{contact.email}}</span>
 									</div>
 									<div class="col-sm-12 contacts-companies t5">
-										<span class="glyphicon glyphicon-signal" aria-hidden="true" ></span> 
+										<span ng-hide="contact.fix_phone == null && contact.cel_phone == null" class="glyphicon glyphicon-signal" aria-hidden="true" ></span> 
 										<span>{{contact.fix_phone}}</span> <span ng-hide="contact.cel_phone == null"> / </span>
 										<span>{{contact.cel_phone}}</span>
 									</div>
@@ -37,7 +37,7 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12">
-							<a ui-sref="companiesList()" class="btn btn-block btn-ver-mais">VOLTAR PARA A LISTA</a>
+							<a ui-sref="companiesList()" class="btn btn-block btn-ver-mais">VER A LISTA COMPLETA</a>
 						</div>
 					</div>
 				</div>

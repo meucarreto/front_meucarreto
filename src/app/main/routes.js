@@ -26,6 +26,11 @@ angular.module('App').config(['$stateProvider', '$urlRouterProvider',
                 templateUrl: 'app/views/contact/contact.html',
                 controller: 'contactController'
             })
+            .state('meucarreto', {
+                url: '/meucarreto',
+                templateUrl: 'app/views/meucarreto/meucarreto.html',
+                controller: 'meuCarretoController'
+            })
             .state('list', {
                 url: '/listagem/:slug',
                 templateUrl: 'app/views/categoryList/contact.html',
