@@ -31,9 +31,10 @@
 										<div class="col-sm-12">
 											<a ui-sref="companiesDetail({slug : item.slug})" ng-click="ga('VER DETALHES DO ' + item.name)"> {{item.name}}</a>
 										</div>
-										<div class="col-sm-12 contacts-companies t5" ng-hide="item.contact.email == null">
-											<span class="glyphicon glyphicon-envelope" aria-hidden="true" ></span> 
-											<span>{{item.contact.email | limitTo:item.size}}</span>
+										<div class="col-sm-12 contacts-companies t5">
+											<span class="glyphicon glyphicon-envelope" aria-hidden="true" ng-hide="item.contact.email == null"></span> 
+											<span ng-hide="item.contact.email == null">{{item.contact.email | limitTo:item.size}}</span>
+											&nbsp;
 										</div>
 										<div class="col-sm-12 contacts-companies" >
 											<span class="glyphicon glyphicon-signal" aria-hidden="true" ng-hide="item.contact.fix_phone == null"></span> 
