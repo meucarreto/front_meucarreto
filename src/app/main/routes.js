@@ -11,13 +11,13 @@ angular.module('App').config(['$stateProvider', '$urlRouterProvider',
 
         // Application routes
         $stateProvider
-            .state('index', {
-                url: '/',
+            .state('embreve', {
+                url: '/embreve',
                 templateUrl: 'app/views/embreve/embreve.html',
                 controller: 'embreveController'
             })
             .state('home', {
-                url: '/home',
+                url: '/',
                 templateUrl: 'app/views/main/main.html',
                 controller: 'mainController'
             })

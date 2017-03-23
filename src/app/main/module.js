@@ -10,7 +10,7 @@ app
 // router options
 .config(['$urlRouterProvider', '$locationProvider', function ($urlRouterProvider, $locationProvider) {
 	'use strict';
-	// $locationProvider.html5Mode(true); // allow html5mode routes (no #)
+	$locationProvider.html5Mode(true); // allow html5mode routes (no #)
 	$urlRouterProvider.otherwise(function($injector, $location){
     	$injector.get('$state').go('404');
 	}); // if route not found redirect to /
